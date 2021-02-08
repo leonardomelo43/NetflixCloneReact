@@ -10,7 +10,7 @@
     padding-left: 30px;
 }
 .movieRow--list {
-    width: 99999999px ;
+    transition: all ease 0.5s;
 }
 .movieRow--item {
     display: inline-block;
@@ -24,4 +24,43 @@
 }
 .movieRow--item img:hover {
     transform: scale(1);
+}
+
+.movieRow--Left,
+.movieRow--Right {
+    position: absolute;
+    width: 40px;
+    height: 225px;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0;
+    transition: all ease 0.5s;
+}
+
+.movieRow--Left {
+    left: 0;
+}
+
+.movieRow--Right {
+    right: 0;
+
+}
+.movieRow:hover .movieRow--Left,
+.movieRow:hover .movieRow--Right {
+    opacity: 1;
+    transition: all ease 0,5s;
+}
+
+/* para deixar os botões aparecendo quando for um celular*/
+
+@media (max-width:760px) {
+    .movieRow--Right,
+    .movieRow--Left {
+        opacity: 1;
+    }
 }
